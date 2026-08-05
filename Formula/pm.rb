@@ -1,25 +1,25 @@
 class Pm < Formula
   desc "Process manager with a TUI — runs your commands through your real shell, keeps them alive, starts them at login"
   homepage "https://github.com/osszoi/process-manager"
-  version "0.1.4"
+  version "0.1.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/osszoi/process-manager/releases/download/v0.1.4/pm-aarch64-apple-darwin.tar.xz"
-      sha256 "ec48222715461419b0040e794b9777fe7237aad69b44286f2a7cb1fbb3c805dc"
+      url "https://github.com/osszoi/process-manager/releases/download/v0.1.5/pm-aarch64-apple-darwin.tar.xz"
+      sha256 "24d6ba6560a74f083c6c2445629708d9594e57df6cf07d793962db21f099eafb"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/osszoi/process-manager/releases/download/v0.1.4/pm-x86_64-apple-darwin.tar.xz"
-      sha256 "d5364e32c8724bec89cc4c3a0ce71eec815267868d4bebc7a3b1cba967834c17"
+      url "https://github.com/osszoi/process-manager/releases/download/v0.1.5/pm-x86_64-apple-darwin.tar.xz"
+      sha256 "aba25836b3dc354a0c12aac5dacdfb46ae915e6641207777b7d88ccf47049016"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/osszoi/process-manager/releases/download/v0.1.4/pm-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "c288c5cfc6173a289f4ddad6b3f60322243639675b9b574b68aed1620a1532a3"
+      url "https://github.com/osszoi/process-manager/releases/download/v0.1.5/pm-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "54d1eae5373c59dd645a11071b9dbbee8b55fd8aaa3931a7593afc728763a9a8"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/osszoi/process-manager/releases/download/v0.1.4/pm-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "516bca07c00c1e04cd90a3c2b420dda0f41579839eac4198d3fdbee84cbfd602"
+      url "https://github.com/osszoi/process-manager/releases/download/v0.1.5/pm-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "51d36678175a81252af512c063ac97ef93275609b2377255cc110f9ed374eacc"
     end
   end
   license "MIT"
