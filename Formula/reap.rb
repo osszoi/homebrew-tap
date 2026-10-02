@@ -1,19 +1,19 @@
 class Reap < Formula
   desc "Code health scanner for Java — git hotspots, complexity, duplicates, dead code, dependencies"
   homepage "https://github.com/osszoi/reap"
-  version "0.6.1"
+  version "0.7.0"
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/osszoi/reap/releases/download/v0.6.1/reap-aarch64-apple-darwin.tar.xz"
-    sha256 "e4ec00f93a977ea76ca9b1aa63b9e4c882562735e579cef71ecfc224df060b9c"
+    url "https://github.com/osszoi/reap/releases/download/v0.7.0/reap-aarch64-apple-darwin.tar.xz"
+    sha256 "50c7881d60831839724943b71116a75c3d89f258ebea8179994477fdce09cb8c"
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/osszoi/reap/releases/download/v0.6.1/reap-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "3169804900cc08d3e30249892e37eb5e53b3a3a152fb08ed0a5ce87018722186"
+      url "https://github.com/osszoi/reap/releases/download/v0.7.0/reap-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "0271ab68307120b4849876c5a7671055962cfbf1f69e564af4341318a80c72e0"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/osszoi/reap/releases/download/v0.6.1/reap-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "c2b5871476a2e0998f78ef66be7025de90cec3ca2286679e00445b908e49430b"
+      url "https://github.com/osszoi/reap/releases/download/v0.7.0/reap-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "cda0a60f48fbd431f3a9d86bd2fe70845b184e232f347fba54fd08f74a9823f7"
     end
   end
   license "MIT"
@@ -41,9 +41,15 @@ class Reap < Formula
   end
 
   def install
-    bin.install "reap" if OS.mac? && Hardware::CPU.arm?
-    bin.install "reap" if OS.linux? && Hardware::CPU.arm?
-    bin.install "reap" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "reap"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "reap"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "reap"
+    end
 
     install_binary_aliases!
 
